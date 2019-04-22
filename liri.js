@@ -30,7 +30,7 @@ switch (userCommand) {
             movieThis(userSearch);
         }
         else {
-            movieThis('Mr. Nobody')
+            movieThis('Batman Returns')
         }
     break;
     case ('do-what-it-says'):
