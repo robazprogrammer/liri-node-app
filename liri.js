@@ -30,7 +30,7 @@ switch (userCommand) {
             movieThis(userSearch);
         }
         else {
-            movieThis('Batman Returns')
+            movieThis('Mr. Nobody')
         }
     break;
     case ('do-what-it-says'):
@@ -79,10 +79,11 @@ spotify.search({ type: 'track', query: song, limit: 1 }, function(error, data){
 
         let albumN = results.album.name;
 
-     console.log("Song Title: " + name +
-     "\nArtist Name: " + artist + 
-     "\nAlbum: " + albumN + 
-    "\nPreview Link: " + previewLink + "\n");
+        console.log("\nArtist Name: " + artist + 
+        "Song Title: " + name +
+        "\nPreview Link: " + previewLink + "\n"
+        "\nAlbum: " + albumN + "\n");
+     
 
     } else {
         console.error(error);
