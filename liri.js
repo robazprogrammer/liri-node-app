@@ -77,12 +77,12 @@ spotify.search({ type: 'track', query: song, limit: 1 }, function(error, data){
 
         let previewLink = results.preview_url;
 
-        let albumN = results.album.name;
+        let albumName = results.album.name;
 
         console.log("\nArtist Name: " + artist + 
         "Song Title: " + name +
         "\nPreview Link: " + previewLink + "\n"
-        "\nAlbum: " + albumN + "\n");
+        "\nAlbum: " + albumName + "\n");
      
 
     } else {
