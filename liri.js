@@ -1,4 +1,5 @@
 require("dotenv").config();
+
 var request = require('request');
 var Spotify = require('node-spotify-api');
 
@@ -51,7 +52,6 @@ function concertThis(artist) {
                 let state = results[i].venue.region;
                 let country = results[i].venue.country;
                 let location = city + ", " + state + ", " + country;
-
                 let date = moment(results[i].datetime).format("MM/DD/YYYY");
 
                 console.log("Concert Venue: " + name + 
@@ -72,17 +72,14 @@ spotify.search({ type: 'track', query: song, limit: 1 }, function(error, data){
 
         let results = data.tracks.items[0];
         let artist = results.album.artists[0].name;
-  
         let name = results.name
-
         let previewLink = results.preview_url;
-
         let albumName = results.album.name;
 
         console.log("Song Title: " + name +
-     "\nArtist: " + artist + 
-     "\nAlbum: " + albumName + 
-    "\nPreview Link: " + previewLink + "\n");
+        "\nArtist: " + artist + 
+        "\nAlbum: " + albumName + 
+        "\nPreview Link: " + previewLink + "\n");
      
 
     } else {
@@ -96,22 +93,13 @@ function movieThis(movie) {
     request(movieURL, function (error, data, body) {
         if (!error) {
             let data = JSON.parse(body);
-        
-        //Title
             let title = data.Title;
-        //Year Movie came out
-           let year = data.Year;
-        //IMDB Rating 
+            let year = data.Year;
             let imdbRating = data.imdbRating;
-        //Rotten Tomatoes Rating
             let rottenRating = data.Ratings[1].Value;
-        //Production Country
             let country = data.Country;
-        //Language
             let language = data.Language;
-        //Plot
             let plot = data.Plot;
-        //Actors
             let actors = data.Actors;
 
             console.log("Movie Title: " + title + 
